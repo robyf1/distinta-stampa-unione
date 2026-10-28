@@ -21,7 +21,7 @@ Ecco come appaiono il foglio di calcolo operativo e il documento PDF finale gene
 * 📊 **Integrazione Google Workspace**: Generazione automatica di documenti PDF a partire da dati inseriti in Google Sheets.
 * 🏷️ **Codici DataMatrix 2D**: Generazione e inserimento dinamico dei codici DataMatrix nel documento tramite la libreria [BWIP-JS](https://github.com/metafloor/bwip-js).
 * 📑 **Gestione Modelli**: Utilizzo di file Google Docs come template grafici e strutturali.
-* 📂 **Workflow Pulito**: Esportazione automatica e organizzazione dei PDF generati in cartelle di destinazione su Google Drive.
+* 📂 **Workflow e Destinazione Automatici**: Creazione automatica della sottocartella `reports` nella directory del progetto per il salvataggio ordinato di tutti i documenti PDF generati.
 
 ---
 
@@ -49,11 +49,11 @@ Per testare e utilizzare il progetto, abbiamo messo a disposizione i file di ese
 1. **Copia i Modelli**: Salva una copia del Foglio Google e del Modello Google Doc nel tuo Google Drive (vedi link sopra).
 2. **Apri Apps Script**: Nel tuo Foglio Google copiato, vai nel menu in alto e seleziona **Estensioni > Apps Script**.
 3. **Incolla il Codice**: Cancella il codice predefinito nell'editor e incolla il contenuto del file [`stampa-unione.gs`](./stampa-unione.gs) presente in questo repository.
-4. **Configura gli ID**: Modifica le variabili di configurazione all'init del codice con gli ID del tuo documento modello Google Doc e della cartella di destinazione di Google Drive.
+4. **Esecuzione Automatica**: Lo script rileverà automaticamente la cartella contenitrice e il modello Google Doc.
 5. **Autorizzazione dello Script**: 
    * Al primo avvio o alla prima esecuzione di una funzione, Google richiederà di **concedere le autorizzazioni** per permettere allo script di interagire con i tuoi Fogli, Documenti e Drive.
    * Clicca su **"Autorizza accesso"**, seleziona il tuo account Google, fai clic su **"Avanzate"** e infine su **"Vai a [Nome del tuo progetto] (non sicuro)"** poiché lo script è stato creato da te. Completa accettando i permessi richiesti.
-6. **Esegui**: Salva e avvia le funzioni di generazione del PDF.
+6. **Generazione Report**: Esegui lo script per generare gli ordini. Se la sottocartella **`reports`** non esiste ancora nella directory principale, lo script la creerà automaticamente e vi salverà i file PDF finali.
 
 ---
 
@@ -80,6 +80,8 @@ L'adozione di questi identificatori all'interno della stringa DataMatrix permett
 
 ## ❓ FAQ & Troubleshooting
 
+* **Dove vengono salvati i file PDF una volta generati?**  
+  I PDF vengono depositati direttamente all'interno della sottocartella **`reports`**. Se non è presente, lo script provvederà a crearla automaticamente nella medesima cartella dove risiede il tuo Google Sheet.
 * **Lo script dà un errore di autorizzazione durante l'esecuzione?** 
   Assicurati di aver completato tutti i passaggi di sblocco ("Avanzate" > "Vai a..."). Se modifichi i permessi richiesti nel codice, potrebbe essere necessario rieseguire l'autorizzazione.
 * **Il codice DataMatrix non viene visualizzato correttamente nel PDF?** 
