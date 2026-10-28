@@ -1,6 +1,6 @@
 # 📄 Distinta Stampa Unione
 
-Una soluzione open source basata su **Google Apps Script** per automatizzare la generazione di ordini di produzione in formato PDF a partire da un foglio **Google Sheets**, con l'integrazione di modelli **Google Docs** e codici 2D **DataMatrix**.
+Una soluzione open source basata su **Google Apps Script**  per automatizzare la generazione di ordini di produzione in formato PDF a partire da un foglio **Google Sheets**, con l'integrazione di modelli **Google Docs** e codici 2D **DataMatrix**.
 
 ---
 
