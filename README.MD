@@ -1,12 +1,12 @@
 # 📄 Distinta Stampa Unione
 
-Una soluzione open source basata su **Google Apps Script**  per automatizzare la generazione di ordini di produzione in formato PDF a partire da un foglio **Google Sheets**, con l'integrazione di modelli **Google Docs** e codici 2D **DataMatrix**.
+Una soluzione open source basata su **Google Apps Script** per automatizzare la generazione di ordini di produzione in formato PDF a partire da un foglio **Google Sheets**, con l'integrazione di modelli **Google Docs** e codici 2D **DataMatrix**.
 
 ---
 
 ## 🖼️ Anteprima e Struttura del Progetto
 
-Ecco come organizzare i file su Google Drive e come appaiono la gestione dati e il PDF finale:
+Ecco come organizzare i file su Google Drive, oltre all'anteprima del foglio di calcolo, del modello Google Docs e del PDF finale generato:
 
 ### 1. Struttura Cartella su Google Drive
 ![Struttura Cartella Drive](./struttura-cartella.jpg)
@@ -14,7 +14,10 @@ Ecco come organizzare i file su Google Drive e come appaiono la gestione dati e 
 ### 2. Google Sheets (Gestione Dati)
 ![Google Sheets](./screenshot-fogli.png)
 
-### 3. Risultato Finale (PDF con DataMatrix)
+### 3. Modello Google Docs (Template)
+![Modello Distinta](./modello-distinta.png)
+
+### 4. Risultato Finale (PDF con DataMatrix)
 ![PDF Generato](./screenshot-esempio.png)
 
 ---
