@@ -6,15 +6,22 @@ Una soluzione open source basata su **Google Apps Script** per automatizzare la 
 
 Ecco come organizzare i file su Google Drive, oltre all'anteprima del foglio di calcolo, del modello Google Docs e del PDF finale generato:
 
+---
+
 ### 1. Struttura Cartella su Google Drive
+![Struttura Cartella Drive](./struttura-cartella.jpg)
 
 ### 2. Google Sheets (Gestione Dati)
+![Google Sheets](./screenshot-fogli.png)
 
 ### 3. Modello Google Docs (Template)
+![Modello Google Docs](./modello-distinta.png)
 
 ### 4. Risultato Finale (PDF con DataMatrix)
+![PDF Generato](./screenshot-esempio.png)
 
-## 🚀 Caratteristiche Principali
+---
+
 
 * 📊 **Integrazione Google Workspace**: Generazione automatica di documenti PDF a partire da dati inseriti in Google Sheets.
 * 🏷️ **Codici DataMatrix 2D**: Generazione e inserimento dinamico dei codici DataMatrix nel documento tramite la libreria [BWIP-JS](https://github.com/metafloor/bwip-js).
