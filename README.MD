@@ -15,7 +15,7 @@ Ecco come organizzare i file su Google Drive, oltre all'anteprima del foglio di 
 ![Google Sheets](./screenshot-fogli.png)
 
 ### 3. Modello Google Docs (Template)
-![Modello Distinta](./modello-distinta.png)
+![Modello Google Docs](./modello-distinta.png)
 
 ### 4. Risultato Finale (PDF con DataMatrix)
 ![PDF Generato](./screenshot-esempio.png)
@@ -26,7 +26,7 @@ Ecco come organizzare i file su Google Drive, oltre all'anteprima del foglio di 
 
 * 📊 **Integrazione Google Workspace**: Generazione automatica di documenti PDF a partire da dati inseriti in Google Sheets.
 * 🏷️ **Codici DataMatrix 2D**: Generazione e inserimento dinamico dei codici DataMatrix nel documento tramite la libreria [BWIP-JS](https://github.com/metafloor/bwip-js).
-* 📑 **Gestione Modelli**: Utilizzo di file Google Docs come template grafici e strutturali.
+* 📑 **Gestione Modelli**: Utilizzo di file Google Docs come template grafici e strutturali completamente personalizzabili.
 * 📂 **Workflow e Destinazione Automatici**: Creazione automatica della sottocartella `reports` nella directory del progetto per il salvataggio ordinato di tutti i documenti PDF generati.
 
 ---
@@ -68,19 +68,21 @@ Per fare in modo che lo script legga correttamente i dati, assicurati che il Goo
 
 ---
 
-## 📌 Struttura della Stringa DataMatrix e Separatori `(12)` e `(34)`
+## 📌 Personalizzazione Campi e Stringa DataMatrix
 
-Durante il processo di stampa unione, la stringa inviata per la generazione del codice 2D DataMatrix viene formattata combinando i valori delle colonne secondo la seguente sintassi:
+> 💡 **Nota sulla flessibilità**: Tutti i campi, le intestazioni e la composizione del DataMatrix forniti nei file di esempio sono a **puro titolo dimostrativo**. Puoi adattare liberamente il progetto alle tue esigenze operative modificando semplicemente i nomi delle colonne nel foglio di calcolo e aggiornando i marcatori segnaposto (es. `{{NOME_CAMPO}}`) nel modello Google Doc.
+
+Durante il processo di stampa unione di esempio, la stringa inviata per la generazione del codice 2D DataMatrix viene formattata combinando i valori delle colonne secondo la seguente sintassi:
 
 ```text
 [Codice_Articolo](12)[Programma](34)[Codice_Ordine]
 ```
 
-### Significato dei Separatori:
+### Significato dei Separatori di Esempio:
 * **`(12)` (Separatore Articolo / Programma)**: Agisce da delimitatore di campo per separare nettamente il codice articolo dal programma di produzione durante la lettura.
 * **`(34)` (Separatore Programma / Ordine)**: Identificatore e delimitatore di campo che separa il codice programma dall'identificativo unico dell'ordine di produzione.
 
-L'adozione di questi identificatori all'interno della stringa DataMatrix permette ai lettori di codici 2D e ai sistemi software aziendali (MES/ERP) di parsare istantaneamente e con precisione i singoli campi durante la scansione industriale.
+L'adozione di questi identificatori all'interno della stringa DataMatrix permette ai lettori di codici 2D e ai sistemi software aziendali (MES/ERP) di parsare istantaneamente e con precisione i singoli campi durante la scansione industriale. Puoi riorganizzare o concatenare variabili differenti modificando la logica nel codice Apps Script.
 
 ---
 
@@ -90,7 +92,9 @@ L'adozione di questi identificatori all'interno della stringa DataMatrix permett
   Basta fare clic sul pulsante grafico **`Crea Ordini`** presente all'interno del Foglio Google.
 * **Dove vengono salvati i file PDF una volta generati?**  
   I PDF vengono depositati direttamente all'interno della sottocartella **`reports`**. Se non è presente, lo script provvederà a crearla automaticamente nella medesima cartella dove risiede il tuo Google Sheet.
-* **Lo script dà un errore di autorizzazione durante l'esecuzione?** 
+* **Posso cambiare i nomi delle colonne o aggiungere altri campi al PDF?**  
+  Sì! Basta aggiornare i tag `{{...}}` all'interno del file Google Doc di modello e assicurarsi che corrispondano alle intestazioni di colonna nel foglio Google.
+* **Lo script dà un errore di autorizzazione durante l'esecuzione?**  
   Assicurati di aver completato tutti i passaggi di sblocco ("Avanzate" > "Vai a...").
 
 ---
