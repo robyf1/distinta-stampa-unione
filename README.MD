@@ -9,7 +9,7 @@ Una soluzione open source basata su **Google Apps Script**  per automatizzare la
 Ecco come organizzare i file su Google Drive e come appaiono la gestione dati e il PDF finale:
 
 ### 1. Struttura Cartella su Google Drive
-![Struttura Cartella Drive](./struttura-cartella.jpg)
+![Struttura Cartella Drive](./struttura-cartella1.jpg)
 
 ### 2. Google Sheets (Gestione Dati)
 ![Google Sheets](./screenshot-fogli.png)
