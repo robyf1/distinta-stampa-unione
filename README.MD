@@ -4,14 +4,17 @@ Una soluzione open source basata su **Google Apps Script** per automatizzare la 
 
 ---
 
-## 🖼️ Anteprima del Progetto
+## 🖼️ Anteprima e Struttura del Progetto
 
-Ecco come appaiono il foglio di calcolo operativo e il documento PDF finale generato:
+Ecco come organizzare i file su Google Drive e come appaiono la gestione dati e il PDF finale:
 
-### 1. Google Sheets (Gestione Dati)
+### 1. Struttura Cartella su Google Drive
+![Struttura Cartella Drive](./struttura-cartella.jpg)
+
+### 2. Google Sheets (Gestione Dati)
 ![Google Sheets](./screenshot-fogli.png)
 
-### 2. Risultato Finale (PDF con DataMatrix)
+### 3. Risultato Finale (PDF con DataMatrix)
 ![PDF Generato](./screenshot-esempio.png)
 
 ---
@@ -34,31 +37,31 @@ Vuoi scaricare e visualizzare direttamente il documento finale?
 
 ## 📂 Modelli e File di Esempio
 
-Per testare e utilizzare il progetto, abbiamo messo a disposizione i file di esempio (Foglio di calcolo e Modello Google Docs) protetti in sola lettura. 
+Per testare e utilizzare il progetto, abbiamo messo a disposizione i file di esempio (Foglio di calcolo con Apps Script già incorporato e Modello Google Docs) protetti in sola lettura. 
 
 👉 **[Accedi alla Cartella dei Modelli di Esempio su Google Drive](https://drive.google.com/drive/folders/1TjsqBlEYKjHKwB-pydBG4JT9kQFHzxI4?usp=sharing)**
 
 > **Come utilizzarli:**
 > 1. Apri ciascun file presente nella cartella condivisa.
-> 2. Seleziona dal menu **File > Crea una copia** per salvarne una versione modificabile all'interno del tuo Google Drive personale.
+> 2. Seleziona dal menu **File > Crea una copia** per salvarne una versione modificabile all'interno della tua cartella Google Drive personale.
 
 ---
 
-## 🛠️ Guida all'Installazione
+## 🛠️ Guida all'Uso e Avvio Rapido
 
-1. **Copia i Modelli**: Salva una copia del Foglio Google e del Modello Google Doc nel tuo Google Drive (vedi link sopra).
-2. **Apri Apps Script**: Nel tuo Foglio Google copiato, vai nel menu in alto e seleziona **Estensioni > Apps Script**.
-3. **Incolla il Codice**: Cancella il codice predefinito nell'editor e incolla il contenuto del file [`stampa-unione.gs`](./stampa-unione.gs) presente in questo repository.
-4. **Esecuzione Automatica**: Lo script rileverà automaticamente la cartella contenitrice e il modello Google Doc.
-5. **Autorizzazione dello Script**: 
-   * Al primo avvio o alla prima esecuzione di una funzione, Google richiederà di **concedere le autorizzazioni** per permettere allo script di interagire con i tuoi Fogli, Documenti e Drive.
-   * Clicca su **"Autorizza accesso"**, seleziona il tuo account Google, fai clic su **"Avanzate"** e infine su **"Vai a [Nome del tuo progetto] (non sicuro)"** poiché lo script è stato creato da te. Completa accettando i permessi richiesti.
-6. **Generazione Report**: Esegui lo script per generare gli ordini. Se la sottocartella **`reports`** non esiste ancora nella directory principale, lo script la creerà automaticamente e vi salverà i file PDF finali.
+Lo script Google Apps Script è già **incorporato nativamente** all'interno del Foglio Google di esempio, quindi non occorre copiare o incollare alcun codice.
+
+1. **Copia i Modelli**: Salva una copia del Foglio Google e del Modello Google Doc nella tua cartella su Google Drive (es. `Miodrive/StampaUnione`).
+2. **Usa il Pulsante "Crea Ordini"**: All'interno del Foglio Google troverai un pulsante grafico integrato denominato **`Crea Ordini`**.
+3. **Primo Avvio (Autorizzazione)**: 
+   * Alla prima pressione del pulsante **`Crea Ordini`**, Google richiederà di concedere i permessi di esecuzione per interagire con i Fogli, Documenti e Drive.
+   * Clicca su **"Autorizza accesso"**, seleziona il tuo account Google, fai clic su **"Avanzate"** e infine su **"Vai a DistintaStampaUnione (non sicuro)"**. Accetta i permessi richiesti.
+4. **Generazione dei PDF**: Una volta autorizzato, ogni clic su **`Crea Ordini`** avvierà la stampa unione. Lo script creerà automaticamente la sottocartella **`reports`** (se non già presente) e vi salverà i file PDF generati.
 
 ---
 
 ## 📋 Prerequisiti della Struttura Fogli
-Per fare in modo che lo script legga correttamente i dati, assicurati che il Google Foglio di esempio mantenga la struttura delle intestazioni di colonna previste dal codice (es. riferimenti articolo, quantità, codici per il DataMatrix).
+Per fare in modo che lo script legga correttamente i dati, assicurati che il Google Foglio di esempio mantenga la struttura delle intestazioni di colonna previste (es. riferimenti articolo, quantità, codici per il DataMatrix).
 
 ---
 
@@ -80,12 +83,12 @@ L'adozione di questi identificatori all'interno della stringa DataMatrix permett
 
 ## ❓ FAQ & Troubleshooting
 
+* **Come avvio la generazione se non trovo il menu in alto?**  
+  Basta fare clic sul pulsante grafico **`Crea Ordini`** presente all'interno del Foglio Google.
 * **Dove vengono salvati i file PDF una volta generati?**  
   I PDF vengono depositati direttamente all'interno della sottocartella **`reports`**. Se non è presente, lo script provvederà a crearla automaticamente nella medesima cartella dove risiede il tuo Google Sheet.
 * **Lo script dà un errore di autorizzazione durante l'esecuzione?** 
-  Assicurati di aver completato tutti i passaggi di sblocco ("Avanzate" > "Vai a..."). Se modifichi i permessi richiesti nel codice, potrebbe essere necessario rieseguire l'autorizzazione.
-* **Il codice DataMatrix non viene visualizzato correttamente nel PDF?** 
-  Verifica che la stringa passata alla funzione di generazione del codice DataMatrix sia valida e che la libreria BWIP-JS venga richiamata correttamente nel progetto Apps Script.
+  Assicurati di aver completato tutti i passaggi di sblocco ("Avanzate" > "Vai a...").
 
 ---
 
